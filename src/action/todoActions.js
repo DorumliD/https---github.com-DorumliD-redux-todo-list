@@ -11,3 +11,11 @@ export const deleteTodo = (index)=>{
         payload: index
     };
 };
+
+
+export const handleChangeTodo = (index)=>{
+    return {
+        type: 'CHANGE_TODO',
+        payload: index
+    };
+}

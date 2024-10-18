@@ -8,6 +8,7 @@ function TodoList(){
     const dispatch = useDispatch(); 
 
     const handleAddTodo =()=>{
+        
         if(input){
             dispatch(addTodo(input));
             setInput('');
@@ -22,12 +23,14 @@ function TodoList(){
         <div>
             <h1>Todo List</h1>
             <input type="text" value={input} onChange={e=>setInput(e.target.value)} placeholder="Ish kiriting"/>
-            <button onClick={handleAddTodo}>Qo'shish</button>
+            <button onClick={input === '' ? () => alert('please!') : handleAddTodo}>Qo'shish</button>
+
             <ul>
                 {todos.map((todo, index)=>(
                     <li key={index}>
                         {todo}
-                        <button onClick={()=>handleDeleteTodo(index)}>O'chirish</button>
+                        <button onClick={()=>handleDeleteTodo(index)} >O'chirish</button>
+                        <button onClick={()=>handleChangeTodo(index)} >O'zgartirish</button>
                     </li>
                 ))}
             </ul>

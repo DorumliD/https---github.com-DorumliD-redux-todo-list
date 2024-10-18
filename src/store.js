@@ -16,6 +16,12 @@ function todoReducer(state = initialState, action){
                 ...state,
                 todos: state.todos.filter((todo, index) => index!== action.payload)
             };
+        case 'CHANGE_TODO':
+            return {
+                ...state,
+                
+
+            }
         default:
             return state;
     }
