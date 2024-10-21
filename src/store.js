@@ -16,12 +16,12 @@ function todoReducer(state = initialState, action){
                 ...state,
                 todos: state.todos.filter((todo, index) => index!== action.payload)
             };
-        case 'CHANGE_TODO':
-            return {
-                ...state,
-                
-
-            }
+            case 'CHANGE_TODO':
+                const { index, newText } = action.payload;
+                return {
+                    ...state,
+                    todos: state.todos.map((todo, i) => i === index ? newText : todo)
+                };
         default:
             return state;
     }

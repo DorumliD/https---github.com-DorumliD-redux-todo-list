@@ -13,9 +13,9 @@ export const deleteTodo = (index)=>{
 };
 
 
-export const handleChangeTodo = (index)=>{
+export const changeTodo = (index, newText) => {
     return {
         type: 'CHANGE_TODO',
-        payload: index
+        payload: { index, newText }
     };
-}
+};
